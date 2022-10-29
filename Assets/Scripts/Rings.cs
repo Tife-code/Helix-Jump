@@ -18,8 +18,10 @@ public class Rings : MonoBehaviour
         if(transform.position.y > player.position.y)
         {
             GameManager.numberOfPassedRings++;
-            FindObjectOfType<AudioManager>().Play("whoosh");
+            GameObject.FindObjectOfType<AudioManager>().Play("whoosh");
             Destroy(gameObject);
+            GameManager.score++;
         }
     }
+
 }
